@@ -1,20 +1,20 @@
 // user info 
 const users = [{ username: "seller1", password: "pass1" }];
 
-// Inventory for items
+// Items
 const inventory = { Pasta: [], Desserts: [], Drinks: [] };
 
-// Customer's cart
+// Customer cart to store list 
 let cart = [];
 
-// Check username and password (for sellers)
+// Check username n password (for sellers)
 function authenticate(username, password) {
   for (const user of users) {
     if (user.username === username && user.password === password) {
       return true; // Found a match
     }
   }
-  return false; // No match
+  return false;
 }
 
 // Show the available items
@@ -32,7 +32,7 @@ function displayInventory() {
   }
 }
 
-// Menu for sellers to manage inventory
+// menu for sellers to manage the inventory
 function sellerMenu() {
   const username = prompt("Enter your seller username:");
   const password = prompt("Enter your seller password:");
@@ -152,9 +152,9 @@ function main() {
     userType = prompt("Are you a SELLER or CUSTOMER? (Type EXIT to quit)").toLowerCase();
 
     if (userType === "seller") {
-      sellerMenu(); // Go to seller menu
+      sellerMenu(); 
     } else if (userType === "customer") {
-      customerMenu(); // Go to customer menu
+      customerMenu(); 
     }
   } while (userType !== "exit");
 
